@@ -56,5 +56,22 @@ namespace TCPSerwer
             }
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            przycisk_stop.Enabled = false;
+        }
+
+        private void przycisk_stop_Click(object sender, EventArgs e)
+        {
+            
+            serwer.Stop();
+            klient.Close();
+
+            info_o_polaczeniu.Items.Add("Zakończono pracę serwera!");
+
+            przycisk_start.Enabled = true;
+            przycisk_stop.Enabled = false;
+          }
     }
 }
